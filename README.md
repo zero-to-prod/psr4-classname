@@ -22,5 +22,7 @@ composer require zero-to-prod/psr4-classname
 ## Usage
 
 ```php
-Zerotoprod\Psr4Classname\Classname::generate();
+use Zerotoprod\Psr4Classname\Classname;
+
+Classname::generate('weird%characters*in^name', '.php'); // 'WeirdCharactersInName.php';
 ```
