@@ -26,7 +26,7 @@ Generates a valid PSR-4 Compliant Classname from a string.
 
 ## Installation
 
-Install `Zerotoprod\JsonSchema4` via [Composer](https://getcomposer.org/):
+Install `Zerotoprod\Psr4Classname` via [Composer](https://getcomposer.org/):
 
 ```shell
 composer require zero-to-prod/psr4-classname
