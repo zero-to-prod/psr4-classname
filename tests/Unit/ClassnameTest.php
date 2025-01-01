@@ -19,18 +19,18 @@ class ClassnameTest extends TestCase
     public static function classNameProvider(): array
     {
         return [
-            ["my awesome class", "My\\Awesome\\Class"],
-            ["123 invalid class", "Invalid\\Class"],
-            ["some/random\\path", "Some\\Random\\Path"],
+            ["my awesome class", "MyAwesomeClass"],
+            ["123 invalid class", "InvalidClass"],
+            ["some/random\\path", "SomeRandom\\Path"],
             ["weird%characters*in^name", "WeirdCharactersInName"],
             ["my_class_name", "MyClassName"],
             ["!@#$%^&*()", ""],
             ["", ""],
-            ["  multiple   spaces  ", "Multiple\\Spaces"],
+            ["  multiple   spaces  ", "MultipleSpaces"],
             ["_private_class", "PrivateClass"],
             ["namespace\\\\class", "Namespace\\Class"],
             ["class123name", "Class123Name"],
-            ["mix_of-different/separators\\here", "MixOfDifferent\\Separators\\Here"],
+            ["mix_of-different/separators\\here", "MixOfDifferentSeparators\\Here"],
             ["fooBarBaz", "FooBarBaz"],
             ["foo123bar456", "Foo123Bar456"],
             ["userID", "UserID"],

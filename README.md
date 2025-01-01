@@ -9,15 +9,30 @@
 [![Packagist Version](https://img.shields.io/packagist/v/zero-to-prod/psr4-classname?color=f28d1a)](https://packagist.org/packages/zero-to-prod/psr4-classname)
 [![License](https://img.shields.io/packagist/l/zero-to-prod/psr4-classname?color=pink)](https://github.com/zero-to-prod/psr4-classname/blob/main/LICENSE.md)
 
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Contributing](#contributing)
+
+## Introduction
+
 A regular expression to check an Email string.
+
+## Requirements
+
+- PHP 7.1 or higher.
 
 ## Installation
 
-Install the package via Composer:
+Install `Zerotoprod\JsonSchema4` via [Composer](https://getcomposer.org/):
 
-```bash
+```shell
 composer require zero-to-prod/psr4-classname
 ```
+
+This will add the package to your project’s dependencies and create an autoloader entry for it.
 
 ## Usage
 
@@ -26,3 +41,20 @@ use Zerotoprod\Psr4Classname\Classname;
 
 Classname::generate('weird%characters*in^name', '.php'); // 'WeirdCharactersInName.php';
 ```
+
+## Testing
+
+```shell
+./vendor/bin/phpunit
+```
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome!
+Feel free to check the [issues](https://github.com/zero-to-prod/omdb/issues) page if you want to contribute.
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
