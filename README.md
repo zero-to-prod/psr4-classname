@@ -18,7 +18,7 @@
 
 ## Introduction
 
-A regular expression to check an Email string.
+Generates a valid PSR-4 Compliant Classname from a string.
 
 ## Requirements
 
