@@ -12,3 +12,4 @@
 /SECURITY.md              export-ignore
 /test.sh                  export-ignore
 /dock                     export-ignore
+/phpunit.xml              export-ignore
