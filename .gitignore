@@ -4,6 +4,6 @@ composer.lock
 .phpunit.result.cache
 .php-cs-fixer.cache
 /.phpunit.cache/
-
+phpunit.xml
 .vendor/
 .env
