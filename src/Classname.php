@@ -2,6 +2,9 @@
 
 namespace Zerotoprod\Psr4Classname;
 
+/**
+ * @link https://github.com/zero-to-prod/psr4-classname
+ */
 class Classname
 {
     /**
@@ -10,6 +13,8 @@ class Classname
      * ```
      * Classname::generate('weird%characters*in^name', '.php'); // 'WeirdCharactersInName.php'
      * ```
+     *
+     * @link https://github.com/zero-to-prod/psr4-classname
      */
     public static function generate(string $string, $extension = null): string
     {
