@@ -4,6 +4,7 @@ namespace Zerotoprod\Psr4Classname;
 
 /**
  * @link https://github.com/zero-to-prod/psr4-classname
+ * Generates a valid PSR-4 Compliant Classname from a string.
  */
 class Classname
 {
