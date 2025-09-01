@@ -56,7 +56,7 @@ jobs:
           
           # Extract the main PHP class file path from composer.json PSR-4 autoload configuration
           get_main_class_file() {
-              local namespace directory class_name php_file
+              local namespace directory php_file
           
               namespace=$(jq -r '.autoload."psr-4" | keys[0] // empty' "${COMPOSER_JSON}")
               directory=$(jq -r --arg ns "$namespace" '.autoload."psr-4"[$ns] // empty' "${COMPOSER_JSON}")
@@ -66,20 +66,14 @@ jobs:
                   return 1
               fi
           
-              # Remove trailing backslash from namespace
-              namespace="${namespace%\\}"
+              # Convert backslashes to forward slashes for directory path
+              directory=$(echo "$directory" | sed 's/\\/\//g')
+              
+              # Find the first PHP file in the directory (assumes single main class)
+              php_file=$(find "$directory" -maxdepth 1 -name "*.php" -type f | head -n 1)
           
-              # Extract class name from namespace (last segment)
-              class_name=$(echo "$namespace" | awk -F'\\\\' '{print $NF}')
-          
-              # Construct PHP file path
-              php_file="${directory}${class_name}.php"
-          
-              # Convert backslashes to forward slashes for file path
-              php_file=$(echo "$php_file" | sed 's/\\/\//g')
-          
-              if [[ ! -f "$php_file" ]]; then
-                  echo "Error: Main class file '$php_file' not found." >&2
+              if [[ -z "$php_file" || ! -f "$php_file" ]]; then
+                  echo "Error: No main class file found in directory '$directory'." >&2
                   return 1
               fi
           
